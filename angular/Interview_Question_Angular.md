@@ -125,7 +125,104 @@ A.  You can proxy multiple entries to the same target by defining the configurat
 16. How can we deploy an Angular application to a production?
 A. https://angular.io/guide/deployment
 
-17. 
+Angular:
+
+17. What is Angular?
+A. Angular is a Javascript framework which allows us to create reactive single page applications(SPAs).
+
+18. What is the difference AngularJS, Angular 1, Angular 2, ..., Angular 6, Angular7?
+A. Angular 1 was intially released in 2010. Angular 2 is complete re-write of Angular 1 and it was released intially in 2016. It has nothing in common with Angular 1 except the core team that developed it. If we know the Angular 1 unfortunately that knowledge will not help us much and the other other hand we also don't need to know the Angular 1.
+
+On the other hand, The Angular 3, ..., Angular 6, Angular 7 are just Angular. And, the Angular 1 is now called as AngularJS. These two are seperate frameworks.
+
+Angular2+ are really just incremental improvements (Bug fixes, Minor Improvements..etc), No Complete Re-Writes! The syntax is completely same for all the version of Angular.
+
+19. How can we create new Angular application using AngularCLI?
+A. ng new application-name
+
+20. What is Typescript?
+A. Typescript is a superset of Javascript. It offers more features than the Vanilla JS (e.g. Types, Classes, Interfaces). It gives the strong Typing. So, we can define a certain variable is string/number/etc, we don't do it in vanillaJS there we have a dynamic typing.
+
+However, the Typescript doesn't run in the browser, it's compiled to Javascript in the end. And, this compilation is handled by the CLI. One of the reason why we do need the CLI and why we need project management tools like CLI.
+
+21. How the Angular application gets loaded and started?
+A. main.ts file is the entry point to the Angualr application. There we define which Module has to bootstrap first. And, in the module we define which component has to load.
+
+E.g. main.ts -> AppModule -> AppComponent
+
+22. What are Components?
+A. The Components are the key features in Angular application. Wwe built our whole application by composing it from the couple components.
+
+23. How can we create a Component using CLI?
+A. ng generate component component-name (or)ng g c component-name
+
+24. What are Decorators?
+A. The Decorators are the Typescipt feature which allows us to enhance our classes. The Decorators are always attached with the @ sign before it's name.
+
+25. On which package the angular core Decorators are available?
+A. @angular/core
+
+26. What @NgModule decorator does?
+A. This is where we configure all the components which are belongs to the particular module.
+
+@NgModule({
+    declarations: [
+        Component 1,
+        Component 2,
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule
+    ],
+    providers: [
+        Service1,
+        Service2
+    ],
+    bootstrap: [AppComponent]
+})
+
+27. Difference between template and templareUrl?
+A. The template property allows us to write the inline HTML code. Where as, the templateUrl property points to the view file (HTML file).
+
+28. How many types of selectors does Angular supports?
+A.  1) element 'element-name'
+    2) attribute [element-name]
+    3) class .element-name
+
+29. Difference between the styles and styleUrls property?
+A. The styles property allows us to define the inline css. Where as, the stylesUrls property allows us to point to the different css files.
+
+30. What is databinding?
+A. The communication between the HTML(Template) file and the Typescript code(Bussiness Logic).
+
+31. Difference types of communication in Angular?
+A.  1) String interpolation
+    2) Property binding
+
+32. What is String Interpolation?
+A. If we want to output the data from the typescript code to the HTML code we use string interpolation. E.g. {{ data }}
+
+33. What is Property binding?
+A. Property data binding is one-way databinding. Property databinding is performed with the component property. Component property binding is used for communication between the parenent and the child components. E.g. [property]="data"
+
+34. What is Event binding?
+A. If we may want to trigger some Typescript code from the HTML we use this EventBinding. E.g. Lets suppose we want to trigger something in the Typescript code when we click on a button on the HTML page. E.g. (event) = "expression"
+
+35. What is two-way data binding?
+A. Combination of both property binding and event binding is called two-way databinding. 
+E.g. [(ngModel)] = "data"
+
+36. Difference between string interpolation vs property binding?
+A. Whatever the thing we pass between {{}} these brackets the string interpolation converts that to a string. Property binding does the convert the value to string.
+
+
+
+
+
+
+
+
 
 
 
