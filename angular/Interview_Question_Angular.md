@@ -214,17 +214,11 @@ A. Combination of both property binding and event binding is called two-way data
 E.g. [(ngModel)] = "data"
 
 36. Difference between string interpolation vs property binding?
-A. Whatever the thing we pass between {{}} these brackets the string interpolation converts that to a string. Property binding does the convert the value to string.
+A. Whatever the thing we pass between {{}} these brackets, the string interpolation converts that value to a string. Property binding doesn't, it exact pass the same value.
 
+37. When we use $event?
+A. $event is kind of a reserved variable name, we can use this in the template when using the event binding.
 
+38. Which module is required for the two-way data binding?
+A. FormsModule
 
-
-
-
-
-
-
-
-
-    
-    
