@@ -1,4 +1,4 @@
-Setup & Deployment:
+Setup & Deployment: https://angular.io/guide
 
 1. Explain the angular application project structure?
 A.  1) e2e
@@ -222,3 +222,102 @@ A. $event is kind of a reserved variable name, we can use this in the template w
 38. Which module is required for the two-way data binding?
 A. FormsModule
 
+39. What are Directives?
+A. Directives are instructions in the DOM.
+
+40. Some built in directives?
+A. *ngIf, *ngFor, *ngSwitch, ...etc
+
+41. What are structuralDirectives?
+A. The structural directives changes the DOM structure. E.g. *ngIf
+
+42. *ngIf; else?
+A.  <p *ngIf="serverCreated"; else noServer> Server was created
+        <ng-template #noServer>
+            <p>No server was created!</p>
+        </ng-template>
+    </p>
+
+43. How can we style elements dynamically using ngStyle?
+A. we use property binding [ngStyle]="{'background-color: getColor()}"
+    camelCase: backgroundColor
+    string: 'background-color'
+   
+   Bussiness Code:
+   getColor() => this.serverStatus === "Online" ? "green" : "red";
+
+44. How can we add or remove CSS class dynamically?
+A. we use property binding [ngClass] = "{online: serverStatus === 'Online'}"
+
+45. *ngFor or ouputting list object using *ngFor?
+A. *ngFor = "let server of servers; let i = index"
+
+46. How can we ignore creating spec files while creating custom components using angular?
+A. ng g c component-name --spec false
+
+47. How can we create nested components using angular CLI?
+A. ng g c recipe-list/recipe-item
+
+48. How can we pass data between the components?
+A. Using property&event binding.
+
+49. How can we pass data to a child component?
+A. Using property binding.
+
+50. @Input decorator use?
+A. Using @Input() we can input the data from a parent component to a child component.
+
+51. How can we assign a alias to a custom property?
+A. @Input('aliasName') element: type;
+
+52. How can we bind custom events?
+A. @Output() element = new EventEmitter<type>();
+
+53. How can we assign a alias to a custom component?
+A. @Output('aliasName') element = new EventEmitter<type>();
+
+54. What is View Encapsulation and how it works?
+A. https://dzone.com/articles/what-is-viewencapsulation-in-angular
+
+55. How many modes of encapsulation that we have in angular?
+A. Native, None, Emulated
+   None: Doesn't use the view encapsulation, No shadow DOM technology
+   Native: Uses the shadow DOM technology, Does use the style encapsulation(It works only for the browseres which are supported shadow DOM technology )
+   Emulated: No shadow DOM technology, Does use the style encapsulation
+
+56. Local reference in Templates?
+A. A local reference can be placed on any HTML tag. A local references are very a nice feature to get access to some elements in our template and then use that either directly in the template or we can pass that to typescript code.
+E.g: <input type="text" #referenceName> 
+    <button (click)="someFunction(referenceName)"></button>
+
+57. How can we get access to the Template & DOM?
+A. Using Template reference, @ViewChild
+
+58. How can we get access to the Template & DOM with @ViewChild?
+A. <input type="text" #referenceName> 
+   @ViewChild('serverContentInput') serverContentInput;
+   or
+   @ViewChild(ServerContentComponent) serverContentInput; (We either can use a reference name or component type)
+
+59. How can we project content into Components with ng-content?
+A. <app-server-element>
+        <p>project content through ng-content>
+   </app-server-element>
+
+   appServerElement.component.ts
+   <ng-content></ng-content>
+
+60. Explain about the Component Lifecycle?
+A.  ngOnChanges - It excutes right at the start but, there after it always called after a bound input property changes (@Input) to see the new values
+    ngOnit - It only called once the component is intialized, It runs after the constructor
+    ngDoCheck - Called during every change detection run (on every check)
+    ngAfterContentInit - Called after content(ng-content) has been projected into the view
+    ngAfterContentChecked - Called every time the projected content has been checked
+    ngAfterViewInit - Called after the component's view (and child views) has been intialized
+    ngAfterViewChecked - Called every time the view (and child views) have been checked
+    ngDestroy - Called once the component is about to be destroyed
+
+61. How can we get access to ng-content with @ContentChild?
+A. @ContentChild('referenceName') element;
+
+62. 
